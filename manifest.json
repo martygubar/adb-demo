@@ -1,0 +1,26 @@
+{
+    "workshoptitle": "Autonomous Database Demonstrations",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+      {
+        "title": "Build intelligent applications",          
+        "filename": "./build-intelligent-apps.md"
+      },      
+        {
+          "title": "Simplified administration",          
+          "filename": "./simplified-admin.md"
+        },
+        {
+          "title": "Integrate all data",
+          "filename": "./integrate-data.md"
+        },
+        {
+          "title": "Gain insights across all data",
+          "filename": "./analyze.md"
+        },
+        {
+          "title": "Keeping your valuable data safe",
+          "filename": "./security.md"
+        }
+    ]
+}
