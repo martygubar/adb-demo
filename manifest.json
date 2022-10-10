@@ -21,6 +21,10 @@
         {
           "title": "Keeping your valuable data safe",
           "filename": "./security.md"
+        },
+        {
+          "title": "Useful links",
+          "filename": "./useful-links.md"
         }
     ]
 }
