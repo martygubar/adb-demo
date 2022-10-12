@@ -4,23 +4,28 @@
     "tutorials": [
       {
         "title": "Build intelligent applications",          
-        "filename": "./build-intelligent-apps.md"
+        "filename": "./build-intelligent-apps.md",
+        "hide_button": "true"
       },      
         {
           "title": "Simplified administration",          
-          "filename": "./simplified-admin.md"
+          "filename": "./simplified-admin.md",
+          "hide_button": "true"
         },
         {
           "title": "Integrate all data",
-          "filename": "./integrate-data.md"
+          "filename": "./integrate-data.md",
+          "hide_button": "true"
         },
         {
           "title": "Gain insights across all data",
-          "filename": "./analyze.md"
+          "filename": "./analyze.md",
+          "hide_button": "true"
         },
         {
           "title": "Keeping your valuable data safe",
-          "filename": "./security.md"
+          "filename": "./security.md",
+          "hide_button": "true"
         },
         {
           "title": "Environment info",

@@ -9,6 +9,14 @@ Oracle MovieStream is a fictitious on-line movie streaming application. These de
 
 [](youtube:iR-5uwHD1BQ)
 
+<details>
+<summary>**Try it!**</summary>
+
+Experience MovieStream!
+* [Go to the MovieStream application](http://129.159.54.249/)
+
+</details>
+
 ## Use modern APIs for application development
 Time to market is critical and developer productivity is the key to success. Autonomous Database offers a range of APIs - including MongoDB, Oracle SODA or Oracle REST Data Services - to meet developer productivity requirements. 
 
