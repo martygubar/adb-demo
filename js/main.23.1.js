@@ -1115,7 +1115,10 @@ let main = function() {
         The MD code should be in the format [](youtube:<enter_video_id>) for it to render as iframe. */
         let renderYouTubeVideos = function(articleElement) {
             $(articleElement).find('a[href^="youtube:"]').each(function() {
-                $(this).after('<div class="video-container"><iframe title="video iframe" src="https://www.youtube.com/embed/' + $(this).attr('href').split(":")[1] + '" frameborder="0" allowfullscreen></div>');
+                /*$
+                (this).after('<div class="video-container"><iframe title="video iframe" src="https://www.youtube.com/embed/' + $(this).attr('href').split(":")[1] + '" frameborder="0" allowfullscreen></div>'); 
+                */
+                $(this).after('<div class="video-container"><iframe title="video iframe" src="https://www.youtube.com/embed/' + $(this).attr('href').split(":")[1] + '?autoplay=1&rel=0" frameborder="0" allowfullscreen></div>');
                 $(this).remove();
             });
             return articleElement;

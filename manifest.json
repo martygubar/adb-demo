@@ -23,8 +23,9 @@
           "filename": "./security.md"
         },
         {
-          "title": "Useful links",
-          "filename": "./useful-links.md"
+          "title": "Environment info",
+          "hide_button": "true",
+          "filename": "./environment-info.md"
         }
     ]
 }
