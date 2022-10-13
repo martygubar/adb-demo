@@ -1,7 +1,10 @@
 # Simplified administration
 
 ## Overview
+Autonomous Database dramatically simplifies what's required for managing your database. This allows organizations to focus valuable resources on developing applications and not maintaining infrastructure.
 
+Check out this LiveLab to see how you can take advantage of Autonmous Database's management functions:
+* [Go to LiveLabs](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=553&clear=RR,180&session=12667131738972)
 
 ## Provision a database in minutes
 See how to provision an Autonomous Database in just a matter of minutes.

@@ -8,7 +8,10 @@
 
     ![](images/adb-list.png)
 
-    Admin password: bigdataPM2019#
+    **MOVIESTREAM database id/password**
+    ADMIN / bigdataPM2019#
+    MOVIESTREAM / cloudWorld2022#
+    DEMO / cloudWorld2022#
 
 ## Useful links
 * [ADB slides](https://oradocs-prodapp.cec.ocp.oraclecloud.com/documents/link/LDC8C6A771D11271F5DA16EEFAA1AABB4841F70E6F63/fileview/D51C39D2526566BE6EBD8B2F55B391D1C6AF0974FBF2/_ADB-Demobooth-Final.pptx)
