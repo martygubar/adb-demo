@@ -1,8 +1,8 @@
 # Building Intelligent Application
 ## Watch the demo
-Want to learn about this end-to-end demonstration? Check out this 20 minute video that describes the entire scenario. 
+Want to learn about this end-to-end demonstration? Check out this 15 minute video that describes the entire scenario. 
 
-[](youtube:qBZJYWTaOLw)
+[](youtube:c97bex3ErS4)
 
 After watching the video, you can demonstrate the individual steps yourself.
 
