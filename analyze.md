@@ -13,3 +13,6 @@
 
 ## Make product recommendations using graph analytics
 [](youtube:5FG038SwzWU)
+
+## Understand sentiment with text analytics
+[](youtube:5FG038SwzWU)

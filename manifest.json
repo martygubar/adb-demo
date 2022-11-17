@@ -3,15 +3,15 @@
     "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
       {
-        "title": "Build intelligent applications",          
-        "filename": "./build-intelligent-apps.md",
+        "title": "Overview",          
+        "filename": "./overview.md",
+        "hide_button": "false"
+      },  
+      {
+        "title": "Get Started",          
+        "filename": "./get-started.md",
         "hide_button": "true"
-      },      
-        {
-          "title": "Simplified administration",          
-          "filename": "./simplified-admin.md",
-          "hide_button": "true"
-        },
+      },             
         {
           "title": "Integrate all data",
           "filename": "./integrate-data.md",
@@ -23,14 +23,20 @@
           "hide_button": "true"
         },
         {
+          "title": "Simplified administration",          
+          "filename": "./simplified-admin.md",
+          "hide_button": "true"
+        },           
+        {
+          "title": "Deliver intelligent applications",          
+          "filename": "./build-intelligent-apps.md",
+          "hide_button": "true"
+        },      
+  
+        {
           "title": "Keeping your valuable data safe",
           "filename": "./security.md",
           "hide_button": "true"
-        },
-        {
-          "title": "Environment info",
-          "hide_button": "true",
-          "filename": "./environment-info.md"
         }
     ]
 }

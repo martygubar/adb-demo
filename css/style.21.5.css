@@ -1446,3 +1446,20 @@ blockquote:before {
 blockquote p {
   display: inline;
 }
+
+/* Marty for demo */
+.tryit-button {
+    background: #312d2a;
+    color: #ffffff !important;
+    display: block;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    width: 100px;
+    border-radius: 8px;
+}
+.tryit-button:hover {
+    font-weight: bold;
+    text-decoration: none;
+
+}

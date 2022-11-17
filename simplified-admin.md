@@ -6,59 +6,42 @@ Autonomous Database dramatically simplifies what's required for managing your da
 Check out this LiveLab to see how you can take advantage of Autonmous Database's management functions:
 * [Go to LiveLabs](https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=553&clear=RR,180&session=12667131738972)
 
-## Provision a database in minutes
-See how to provision an Autonomous Database in just a matter of minutes.
+   
+## Creating users
 
-[](youtube:C7Ui7dlpWXY)
+## Improve transaction throughput without interruption
+You can easily scale workloads with no interruptions to your application usage. In this example, we'll dramatically increase the throughput of a CPU-bound JSON application by increasing the number of allocated CPUs.
+
+[](youtube:YgwbqurhxjM)
+
+<a 
+  href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=553&p210_wec=&session=4395256387565"
+  class="tryit-button">
+    Try it!
+</a>  
+
 
 ## Save money and improve utilization with auto scale 
 Autonomous Database auto scale allows you to both save money and improve the user experience. Auto scale allows the database to instantly use up to 3x CPU/IO resources when needed. This is great for workloads that have intermittent spikes in usage that lead to CPU or IO constraints.
 
 Importantly, you only pay for what you use. If your workload spikes for 15 minutes and then returns to a steady state - you will only pay for the additional CPUs needed for those 15 minutes.
 
-[](youtube:QqeKd_glinY)
+Let's take a look at auto scale in action.
 
-<details>
-<summary>**Try it!**</summary>
+[](youtube:cDVDd-NUcno)
 
-Open two terminal windows:
-    
-**Auto scale ON**
+<a 
+  href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=553&p210_wec=&session=4395256387565"
+  class="tryit-button">
+    Try it!
+</a>  
 
-```console
-<copy>
-ssh developer
-cd autoscale-demo/
-. env-on
-# -l is the number of sessions. Below, it's 24
-./autoscale-runqueries.sh -d $DBNAME -p $DBPASS -l 24
-</copy>
-```
+## Spin up a development environment using cloning
+Developing an application and need a replica of the production environment? No problem with Autonomous Database cloning. Check out how it's done.
 
-**Auto scale OFF**
+## Create a second reporting environment with refreshable clones
 
-```console
-<copy>
-ssh developer
-cd autoscale-demo/
-. env-off
-# -l is the number of sessions. Below, it's 24
-./fixed-runqueries.sh -d $DBNAME -p $DBPASS -l 24
-</copy>
-```
+## Enable disaster recovery with Autonomous Data Guard
 
-Then, monitor the queries:
-* [Auto scale ON](https://qggemtywectzfj9-autoscaleon.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/_sdw/?nav=autonomous-db)
-* [Auto scale OFF](https://qggemtywectzfj9-autoscaleoff.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/_sdw/?nav=autonomous-db)
-
-**End the workload**
-```console
-<copy>
-ssh developer
-cd autoscale-demo/
-./kill-workload.sh
-</copy>
-```
-
-</details>
+## Automatic and manual failover in case of a disaster
 
