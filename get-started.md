@@ -51,3 +51,12 @@ You'll use analytic SQL to find at-risk customers and then use spatial analytics
 </a> 
 
 ## Create self-service dashboards
+Bring data to life with Autonomous Database and Analytics Cloud. See how you can create self-service dashboards that help you to gain insights. In minutes, you will have compelling dashboards and make valuable discoveries.
+
+[](youtube:NQezS8iFESQ:large)
+
+<a 
+  href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=582"
+  class="tryit-button">
+    Try it!
+</a> 
