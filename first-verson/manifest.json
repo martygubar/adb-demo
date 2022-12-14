@@ -1,0 +1,11 @@
+{
+    "workshoptitle": "Autonomous Database Demonstrations",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+      {
+        "title": "Overview",          
+        "filename": "./do-more-with-adb.md",
+        "hide_button": "true"
+      }
+    ]
+}

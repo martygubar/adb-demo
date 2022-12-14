@@ -22,9 +22,11 @@ MovieStream is partnering with pizza chains around the country in order to deliv
 [](youtube:SN06726_45w:large)
 
 <details>
-    <summary>Try it!</summary>
+    <summary class="tryit-button">Try it!</summary>
     ```
+    <copy>
     -- Select the identity to use for the AWS IAM trust relationship
+    -- Choose: tenancy_ocid, compartment_ocid or database_ocid
     SELECT p.cloud_identity 
     FROM v$pdbs p;
 
@@ -52,6 +54,8 @@ MovieStream is partnering with pizza chains around the country in order to deliv
     -- (or your bucket ;) )
     SELECT * 
     FROM DBMS_CLOUD.LIST_OBJECTS('ADB_AMAZON_ARN', 'https://marketing-moviestream.s3.amazonaws.com/');
+
+    </copy>
     ```
 </details>
 

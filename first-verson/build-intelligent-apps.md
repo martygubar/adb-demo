@@ -4,7 +4,7 @@ Explain how ADB simplifies ...
 
 Example:
 
-[](youtube:c97bex3ErS4)
+[](youtube:c97bex3ErS4:large)
 
 Let's look at the components of the application.
 

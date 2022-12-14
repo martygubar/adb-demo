@@ -1,0 +1,56 @@
+# Do more with Autonomous Database
+
+Three videos on a carousel:
+1. What is Autonomous Database?
+2. Introduction to the scenario
+3. Demonstration walk-thru
+
+## It's easy to integrate any data, anywhere
+### Provision a database in minutes
+See how to **provision an Autonomous Database** in just a matter of minutes. Then, take a **quick tour** of the service.
+
+[](youtube:H07UArQgduc:large)
+
+<a 
+  href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/run-workshop?p210_wid=582"
+  class="tryit-button">
+    Try it!
+</a> 
+
+### Create and load tables from a variety of sources
+Data is stored in a variety of file types (CSV, JSON, Apache Parquet) in an Oracle Object Storage data lake. Create database tables and import that data **without writing a single line of code**. It's never been easier or more productive.
+
+[](youtube:Gc3E4GTpyQM:large)
+
+<a 
+  href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=582"
+  class="tryit-button">
+    Try it!
+</a> 
+
+## 
+### Analyze your data with SQL
+SQL is the language of data - and Autonomous Database offers the **industry's leading SQL engine**. Take a look at how you can gain insights from different types of data in different data stores, including tabular data in database tables and JSON data on Oracle Object Storage.
+
+You'll use analytic SQL to find at-risk customers and then use spatial analytics to create a localized offer. It doesn't matter where the data lives - just write your SQL queries and Autonomous Database will do the rest.
+
+[](youtube:z_8oYxJT_PU:large)
+
+<a 
+  href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=582"
+  class="tryit-button">
+    Try it!
+</a> 
+
+### Create self-service dashboards
+Bring data to life with Autonomous Database and Analytics Cloud. See how you can create self-service dashboards that help you to gain insights. In minutes, you will have compelling dashboards and make valuable discoveries.
+
+[](youtube:NQezS8iFESQ:large)
+
+<a 
+  href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=582"
+  class="tryit-button">
+    Try it!
+</a> 
+
+

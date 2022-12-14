@@ -1,0 +1,1658 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%md\n![MovieStream Logo](https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/movie-stream-story/introduction/images/moviestream.jpeg)",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "md",
+          "editOnDblClick": false
+        },
+        "colWidth": 7,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 362.95,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<p><img src=\"https://oracle.github.io/learning-library/data-management-library/autonomous-database/shared/movie-stream-story/introduction/images/moviestream.jpeg\" alt=\"MovieStream Logo\" /></p>\n"
+          }
+        ]
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1669936348587_1023969958",
+      "id": "20221201-231228_1331474692",
+      "dateCreated": "2021-09-20T17:49:43+0000",
+      "dateStarted": "2022-12-02T19:28:59+0000",
+      "dateFinished": "2022-12-02T19:28:59+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:41"
+    },
+    {
+      "text": "%md\n## MovieStream: Analytics across the OCI Data Platform\n\n### Seemingly simple questions - and they can be if you have <span style=\"color: red;\">the right database and query engine</span>\n#### <span style=\"color: blue;\">Avoid falling off the complexity cliff</span> with <span style=\"color: red;\">Autonomous Database and Oracle SQL</span>\nData is stored across storage tiers and in multiple formats.  Autonomous Database is a converged database that allows a single table to capture data of different types (scalar, json, geocoded and more) - stored both in the database as well as in object storage.  Combine 1) ADB's ability to shield users and applications from storage complexity and 2) the market's leading SQL capabilities - and you can get fast answers to tough questions from any application.",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "md",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<h2>MovieStream: Analytics across the OCI Data Platform</h2>\n<h3>Seemingly simple questions - and they can be if you have <span style=\"color: red;\">the right database and query engine</span></h3>\n<h4><span style=\"color: blue;\">Avoid falling off the complexity cliff</span> with <span style=\"color: red;\">Autonomous Database and Oracle SQL</span></h4>\n<p>Data is stored across storage tiers and in multiple formats.  Autonomous Database is a converged database that allows a single table to capture data of different types (scalar, json, geocoded and more) - stored both in the database as well as in object storage.  Combine 1) ADB's ability to shield users and applications from storage complexity and 2) the market's leading SQL capabilities - and you can get fast answers to tough questions from any application.</p>\n"
+          }
+        ]
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1669936348589_-1419922019",
+      "id": "20221201-231228_784899539",
+      "dateCreated": "2021-04-13T14:47:43+0000",
+      "dateStarted": "2022-12-02T19:29:02+0000",
+      "dateFinished": "2022-12-02T19:29:02+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:42"
+    },
+    {
+      "text": "%md\n## <span style=\"color: blue;\">Let's take a look at sales data from our data warehouse</span>\nWe have contact information about all of our customers and can see sales by geography",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "md",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<h2><span style=\"color: blue;\">Let's take a look at sales data from our data warehouse</span></h2>\n<p>We have contact information about all of our customers and can see sales by geography</p>\n"
+          }
+        ]
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1669936348589_-521246954",
+      "id": "20221201-231228_305191123",
+      "dateCreated": "2021-09-17T19:26:28+0000",
+      "dateStarted": "2022-12-02T19:29:30+0000",
+      "dateFinished": "2022-12-02T19:29:30+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:43"
+    },
+    {
+      "title": "Top Sales by City",
+      "text": "%sql\nselect c.city, round(sum(actual_price)) as sales\nfrom customer_contact c, custsales s\nwhere c.cust_id = s.cust_id\nand c.country = 'United States'\ngroup by c.city\norder by 2 desc\nfetch first 10 rows only;",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "editorHide": false,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "CITY": "string",
+                      "SALES": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "rotate",
+                  "stacked": false
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "CITY",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "SALES",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1669936348589_1363458516",
+      "id": "20221201-231228_326947020",
+      "dateCreated": "2021-09-11T14:38:23+0000",
+      "dateStarted": "2022-12-02T19:58:52+0000",
+      "dateFinished": "2022-12-02T19:59:01+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:44"
+    },
+    {
+      "title": "Customer Contact Information in Warehouse",
+      "text": "%sql\nselect * \nfrom customer_contact \nwhere rownum < 10;",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "editorHide": false,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "CUST_ID",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "LAST_NAME",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "FIRST_NAME",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "EMAIL",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "STREET_ADDRESS",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "POSTAL_CODE",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "CITY",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "STATE_PROVINCE",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "COUNTRY",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "COUNTRY_CODE",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "CONTINENT",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "YRS_CUSTOMER",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {
+                          "priority": 0,
+                          "direction": "asc"
+                        },
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "PROMOTION_RESPONSE",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "LOC_LAT",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "LOC_LONG",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1,
+                      "paginationPageSize": 250
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "names": {
+                      "CUST_ID": "string",
+                      "LAST_NAME": "string",
+                      "FIRST_NAME": "string",
+                      "EMAIL": "string",
+                      "STREET_ADDRESS": "string",
+                      "POSTAL_CODE": "string",
+                      "CITY": "string",
+                      "STATE_PROVINCE": "string",
+                      "COUNTRY": "string",
+                      "COUNTRY_CODE": "string",
+                      "CONTINENT": "string",
+                      "YRS_CUSTOMER": "string",
+                      "PROMOTION_RESPONSE": "string",
+                      "LOC_LAT": "string",
+                      "LOC_LONG": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1669936348589_1287422051",
+      "id": "20221201-231228_1420277206",
+      "dateCreated": "2021-09-11T14:40:29+0000",
+      "dateStarted": "2022-12-02T19:59:09+0000",
+      "dateFinished": "2022-12-02T19:59:09+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:45"
+    },
+    {
+      "text": "%md\n## <span style=\"color: blue;\">How to better understand customer profiles</span>\n### Lake House Queries\nWhat data do we have in our lake house that would help us understand our customers?\n\n<span style=\"color: red;\">**Go to [Data Catalog](https://console.us-phoenix-1.oraclecloud.com/datacatalog) to find interesting data.**</span>\n\nIn our Data Lake, we have information about customer in the Landing Zone that has not yet been certified - but is still useful for analysis.\nLet's explore <span style=\"color: blue;\">**customer demographic**</span> and <span style=\"color: blue;\">**customer segmentation**</<span> data sets.",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "md",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<h2><span style=\"color: blue;\">How to better understand customer profiles</span></h2>\n<h3>Lake House Queries</h3>\n<p>What data do we have in our lake house that would help us understand our customers?</p>\n<p><span style=\"color: red;\"><strong>Go to <a href=\"https://console.us-phoenix-1.oraclecloud.com/datacatalog\">Data Catalog</a> to find interesting data.</strong></span></p>\n<p>In our Data Lake, we have information about customer in the Landing Zone that has not yet been certified - but is still useful for analysis.\n<br  />Let's explore <span style=\"color: blue;\"><strong>customer demographic</strong></span> and <span style=\"color: blue;\"><strong>customer segmentation</strong></<span> data sets.</p>\n"
+          }
+        ]
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1669936348589_547094852",
+      "id": "20221201-231228_1055624340",
+      "dateCreated": "2021-09-13T20:05:40+0000",
+      "dateStarted": "2022-12-02T19:29:54+0000",
+      "dateFinished": "2022-12-02T19:29:54+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:46"
+    },
+    {
+      "title": "Access Data Catalog from Autonomous Database",
+      "text": "%sql\n-- Make this a little easier to view the mappping\nselect a.folder_name, \n       a.display_name, \n       a.business_name, \n       a.description, \n       lower(d.oracle_schema_name) as oracle_schema_name, \n       lower(d.oracle_table_name) as oracle_table_name\nfrom all_dcat_entities a, dcat_entities d\nwhere a.data_asset_key = d.asset_key\nand a.key = d.entity_key\nand lower(a.description) like '%customer%'\norder by 1,2;",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "FOLDER_NAME": "string",
+                      "DISPLAY_NAME": "string",
+                      "BUSINESS_NAME": "string",
+                      "DESCRIPTION": "string",
+                      "ORACLE_SCHEMA_NAME": "string",
+                      "ORACLE_TABLE_NAME": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670011292197_301006474",
+      "id": "paragraph_1670011292197_301006474",
+      "dateCreated": "2022-12-02T20:01:32+0000",
+      "dateStarted": "2022-12-02T20:02:32+0000",
+      "dateFinished": "2022-12-02T20:02:35+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:47"
+    },
+    {
+      "title": "Customer Demographics",
+      "text": "%sql\nselect * \nfrom dcat$obj_landing.customer_extension ce\nwhere rownum < 100;",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "editorHide": false,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "CUST_ID": "string",
+                      "LAST_NAME": "string",
+                      "FIRST_NAME": "string",
+                      "EMAIL": "string",
+                      "AGE": "string",
+                      "COMMUTE_DISTANCE": "string",
+                      "CREDIT_BALANCE": "string",
+                      "EDUCATION": "string",
+                      "FULL_TIME": "string",
+                      "GENDER": "string",
+                      "HOUSEHOLD_SIZE": "string",
+                      "INCOME": "string",
+                      "INCOME_LEVEL": "string",
+                      "INSUFF_FUNDS_INCIDENTS": "string",
+                      "JOB_TYPE": "string",
+                      "LATE_MORT_RENT_PMTS": "string",
+                      "MARITAL_STATUS": "string",
+                      "MORTGAGE_AMT": "string",
+                      "NUM_CARS": "string",
+                      "NUM_MORTGAGES": "string",
+                      "PET": "string",
+                      "RENT_OWN": "string",
+                      "SEGMENT_ID": "string",
+                      "WORK_EXPERIENCE": "string",
+                      "YRS_CURRENT_EMPLOYER": "string",
+                      "YRS_RESIDENCE": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1669936348589_-1852654160",
+      "id": "20221201-231228_912684500",
+      "dateCreated": "2021-09-13T20:11:33+0000",
+      "dateStarted": "2022-12-02T19:42:28+0000",
+      "dateFinished": "2022-12-02T19:42:29+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:48"
+    },
+    {
+      "title": "Customer Segmentation",
+      "text": "%sql\nselect cs.short_name as segment,\n       count(*) as num_customers\nfrom dcat$obj_landing.customer_segment cs,   -- from data lake\n     dcat$obj_landing.customer_extension ce  -- from data lake    \nwhere cs.segment_id = ce.segment_id\ngroup by cs.short_name\n;",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 6,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "editorHide": false,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "pieChart",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "SEGMENT": "string",
+                      "ID": "number"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "pieChart": {},
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "hide"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "SEGMENT",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "NUM_CUSTOMERS",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1669936348589_-254275665",
+      "id": "20221201-231228_1602642679",
+      "dateCreated": "2021-09-17T19:51:25+0000",
+      "dateStarted": "2022-12-02T19:55:36+0000",
+      "dateFinished": "2022-12-02T19:55:39+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:49"
+    },
+    {
+      "title": "Movie views by age range",
+      "text": "%sql\nselect\n    case \n        when ce.age > 75 then 'Silent Generation'\n        when ce.age between 57 and 75 then 'Boomer'\n        when ce.age between 41 and 56 then 'Gen X'\n        when ce.age between 25 and 40 then 'Millenials'\n        when ce.age between 9 and 24 then 'Gen Z'\n        end as age_range,\n    count(*) as views\nfrom dcat$obj_landing.customer_extension ce,   -- from data lake\n     custsales c                               -- from data warehouse\nwhere ce.cust_id = c.cust_id\ngroup by \n    (case \n        when ce.age > 75 then 'Silent Generation'\n        when ce.age between 57 and 75 then 'Boomer'\n        when ce.age between 41 and 56 then 'Gen X'\n        when ce.age between 25 and 40 then 'Millenials'\n        when ce.age between 9 and 24 then 'Gen Z'\n        end\n    )",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 6,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "editorHide": false,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "AGE_RANGE": "string",
+                      "VIEWS": "number"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "stacked": false
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "AGE_RANGE",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "VIEWS",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670010648743_1159181624",
+      "id": "paragraph_1670010648743_1159181624",
+      "dateCreated": "2022-12-02T19:50:48+0000",
+      "dateStarted": "2022-12-02T19:56:09+0000",
+      "dateFinished": "2022-12-02T19:56:17+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:50"
+    },
+    {
+      "title": "Let's combine the activity data in the Data Warehouse with demographic information from the Data Lake",
+      "text": "%md\n## <span style=\"color: blue;\">Find most popular movies. Spatial analytics over JSON and tabular data</span>\n\nMovies are in **JSON** format. This is a really flexible way to store data - but can be hard to understand. Oracle SQL makes it simple.",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "md",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "title": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "SEGMENT": "string",
+                      "NUM_VIEWS": "number"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "SEGMENT",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "NUM_VIEWS",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<h2><span style=\"color: blue;\">Find most popular movies. Spatial analytics over JSON and tabular data</span></h2>\n<p>Movies are in <strong>JSON</strong> format. This is a really flexible way to store data - but can be hard to understand. Oracle SQL makes it simple.</p>\n"
+          }
+        ]
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1669936348589_1066348976",
+      "id": "20221201-231228_1410060448",
+      "dateCreated": "2021-09-17T19:52:15+0000",
+      "dateStarted": "2022-12-02T19:30:13+0000",
+      "dateFinished": "2022-12-02T19:30:13+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:51"
+    },
+    {
+      "title": "Movies in JSON format",
+      "text": "%sql\n\nselect json_serialize(json_document) as doc\nfrom movie m\nwhere rownum < 10",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "editorHide": true,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 464.006,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "DOC": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "stacked": true
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [],
+              "groups": [],
+              "values": []
+            },
+            "helium": {}
+          }
+        },
+        "graph": {
+          "mode": "table",
+          "height": 300,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1669936348589_-793459029",
+      "id": "20221201-231228_932171782",
+      "dateCreated": "2021-04-13T14:24:15+0000",
+      "dateStarted": "2022-12-02T00:27:15+0000",
+      "dateFinished": "2022-12-02T00:27:15+0000",
+      "status": "READY",
+      "$$hashKey": "object:52"
+    },
+    {
+      "title": "Oracle SQL makes JSON look familiar ----> use powerful json transforms",
+      "text": "%sql\nselect \n    j.json_document.movie_id,\n    j.json_document.title,\n    j.json_document.year,\n    translate(j.json_document.genre, '[\"]', ' ') as genres\nfrom movie j\nwhere rownum < 10;",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "editorHide": true,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 384.006,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "MOVIE_ID": "number",
+                      "TITLE": "string",
+                      "YEAR": "number",
+                      "GENRES": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "lineChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [],
+              "groups": [],
+              "values": []
+            },
+            "helium": {}
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1669936348589_-1354082941",
+      "id": "20221201-231228_1542622682",
+      "dateCreated": "2021-04-14T16:38:31+0000",
+      "dateStarted": "2022-12-02T00:24:22+0000",
+      "dateFinished": "2022-12-02T00:24:22+0000",
+      "status": "READY",
+      "$$hashKey": "object:53"
+    },
+    {
+      "text": "%md\n## <span style=\"color: blue;\">What movies are my neighbors watching?</span>\n### Use spatial analytics over tabular and JSON  data",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "md",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<h2><span style=\"color: blue;\">What movies are my neighbors watching?</span></h2>\n<h3>Use spatial analytics over tabular and JSON  data</h3>\n"
+          }
+        ]
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1669936348589_872921961",
+      "id": "20221201-231228_1581226917",
+      "dateCreated": "2021-09-20T19:20:58+0000",
+      "dateStarted": "2022-12-02T19:30:20+0000",
+      "dateFinished": "2022-12-02T19:30:20+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:54"
+    },
+    {
+      "title": "Find the nearest neighbors",
+      "text": "%sql\nSELECT \n    a.first_name,\n    a.city,\n    b.first_name as neighbor,\n    b.city as neighbor_city,\n    round( sdo_nn_distance(1), 1 ) distance_km\nFROM customer_contact a, customer_contact  b\nWHERE a.cust_id = 1059376 -- Roberta\nand a.cust_id != b.cust_id\nAND -- 20 nearest neighbors\n    sdo_nn(\n    latlon_to_geometry(b.loc_lat, b.loc_long),\n    latlon_to_geometry(a.loc_lat, a.loc_long),\n    'sdo_num_res=21 unit=KM',\n    1 ) = 'TRUE'\norder by 5  ",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "FIRST_NAME": "string",
+                      "CITY": "string",
+                      "NEIGHBOR": "string",
+                      "NEIGHBOR_CITY": "string",
+                      "DISTANCE_KM": "number"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true,
+        "editorHide": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1669941400563_50302897",
+      "id": "paragraph_1669941400563_50302897",
+      "dateCreated": "2022-12-02T00:36:40+0000",
+      "dateStarted": "2022-12-02T00:53:09+0000",
+      "dateFinished": "2022-12-02T00:53:09+0000",
+      "status": "READY",
+      "$$hashKey": "object:55"
+    },
+    {
+      "title": "What are Roberta's neighbors watching?",
+      "text": "%sql\nwith neighbors as (\n    SELECT \n        b.cust_id -- the neighbor\n    FROM customer_contact a, customer_contact  b\n    WHERE a.cust_id = 1059376\n    and a.cust_id != b.cust_id\n    AND sdo_nn(\n        latlon_to_geometry(b.loc_lat, b.loc_long),\n        latlon_to_geometry(a.loc_lat, a.loc_long),\n        'sdo_num_res=20 unit=KM',\n        1 ) = 'TRUE'\n),\nneighbors_movies as (\n    select \n        movie_id,\n        count(*) as popularity    \n    from custsales c, neighbors n -- combine sales activity with neighbors' movies\n    where c.cust_id = n.cust_id\n    group by movie_id  \n)\nselect\n    j.json_document.movie_id,\n    j.json_document.title,\n    j.json_document.year,\n    n.popularity,\n    translate(j.json_document.genre, '[\"]', ' ') as genres,\n    translate(j.json_document.awards, '[\"]', ' ') as awards    \nfrom neighbors_movies n, movie j -- combine all the above!\nwhere n.movie_id = j.json_document.movie_id\norder by popularity desc nulls last\nfetch first 10 rows only;   ",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "editorHide": true,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "JSON_DOCUMENT",
+                        "visible": true,
+                        "width": 670,
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "MOVIE_ID",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "TITLE",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "GENRE",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "VIEWS",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "AWARDS",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "NUM_AWARDS",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "NOMINATIONS",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "NUM_NOMINATIONS",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1,
+                      "paginationPageSize": 250
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "names": {
+                      "MOVIE_ID": "number",
+                      "TITLE": "string",
+                      "YEAR": "number",
+                      "POPULARITY": "number",
+                      "GENRES": "string",
+                      "AWARDS": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1669936348589_-68969332",
+      "id": "20221201-231228_1413205522",
+      "dateCreated": "2021-09-20T19:30:44+0000",
+      "dateStarted": "2022-12-02T01:09:28+0000",
+      "dateFinished": "2022-12-02T01:09:29+0000",
+      "status": "READY",
+      "$$hashKey": "object:56"
+    },
+    {
+      "text": "%md\n## <span style=\"color: blue;\">Publish the data set</span>\n### Simplify access for other users and applications\n* Create a summariezed sales dashboard materialized view over the sources\n* This will simplify access to the data and accelerate performance\n* Queries against the base tables can automatically rewrite to the MV for interactive analytics",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "md",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<h2><span style=\"color: blue;\">Publish the data set</span></h2>\n<h3>Simplify access for other users and applications</h3>\n<ul>\n<li>Create a summariezed sales dashboard materialized view over the sources</li>\n<li>This will simplify access to the data and accelerate performance</li>\n<li>Queries against the base tables can automatically rewrite to the MV for interactive analytics</li>\n</ul>\n"
+          }
+        ]
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670008596637_345363423",
+      "id": "paragraph_1670008596637_345363423",
+      "dateCreated": "2022-12-02T19:16:36+0000",
+      "dateStarted": "2022-12-02T19:30:45+0000",
+      "dateFinished": "2022-12-02T19:30:45+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:57"
+    },
+    {
+      "title": "Create sales dashboard data set",
+      "text": "%sql\nCREATE MATERIALIZED VIEW sales_dashboard\nENABLE QUERY REWRITE AS (\nselect\n    cs.short_name as customer_segment,\n    ce.education,\n    ce.gender,\n    ce.household_size,\n    ce.job_type,\n    ce.income_level,\n    case \n        when ce.age > 75 then 'Silent Generation'\n        when ce.age between 57 and 75 then 'Boomer'\n        when ce.age between 41 and 56 then 'Gen X'\n        when ce.age between 25 and 40 then 'Millenials'\n        when ce.age between 9 and 24 then 'Gen Z'\n        end as age_range,\n    cc.country,\n    cc.city,\n    c.day_id,\n    g.name genre,\n    count(*) as views,\n    sum(actual_price) as sales        \nfrom dcat$obj_landing.customer_extension ce, custsales c, genre g, dcat$obj_landing.customer_segment cs, customer_contact cc\nwhere ce.cust_id = c.cust_id\n  and ce.cust_id = cc.cust_id\n  and g.genre_id = c.genre_id\n  and ce.segment_id = cs.segment_id\ngroup by \n    cs.short_name,\n    ce.education,\n    ce.gender,\n    ce.household_size,\n    ce.job_type,\n    ce.income_level,\n    (case \n        when ce.age > 75 then 'Silent Generation'\n        when ce.age between 57 and 75 then 'Boomer'\n        when ce.age between 41 and 56 then 'Gen X'\n        when ce.age between 25 and 40 then 'Millenials'\n        when ce.age between 9 and 24 then 'Gen Z'\n        end\n    ),\n        c.day_id,\n        g.name,\n    cc.country,\n    cc.city\n  );",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 6,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "editorHide": true,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670008786755_857861925",
+      "id": "paragraph_1670008786755_857861925",
+      "dateCreated": "2022-12-02T19:19:46+0000",
+      "status": "READY",
+      "$$hashKey": "object:58"
+    },
+    {
+      "title": "Breakout movie views by age range",
+      "text": "%sql\nselect\n    age_range,\n    sum(views) as views\nfrom sales_dashboard\ngroup by age_range\n",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 6,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "multiBarChart",
+              "height": 300,
+              "optionOpen": true,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "AGE_RANGE0",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "VIEWS1",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {
+                          "priority": 0,
+                          "direction": "asc"
+                        },
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1,
+                      "paginationPageSize": 250
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "names": {
+                      "AGE_RANGE": "string",
+                      "VIEWS": "number"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default",
+                  "stacked": true
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "AGE_RANGE",
+                  "index": 0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "VIEWS",
+                  "index": 1,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "editorMode": "ace/mode/osql",
+        "editorHide": true,
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1669936348590_-123282791",
+      "id": "20221201-231228_733804537",
+      "dateCreated": "2021-04-15T04:19:31+0000",
+      "dateStarted": "2022-12-02T19:23:35+0000",
+      "dateFinished": "2022-12-02T19:23:35+0000",
+      "status": "READY",
+      "$$hashKey": "object:59"
+    },
+    {
+      "text": "%sql\n",
+      "user": "MOVIESTREAM",
+      "dateUpdated": "2022-12-02T20:02:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/osql",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "interrupted": false,
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1670008975256_92737420",
+      "id": "paragraph_1670008975256_92737420",
+      "dateCreated": "2022-12-02T19:22:55+0000",
+      "status": "READY",
+      "$$hashKey": "object:60"
+    }
+  ],
+  "name": "MovieStream Lakehouse",
+  "id": "489",
+  "defaultInterpreterGroup": "spark",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {
+    "isRunning": false
+  },
+  "path": "/MovieStream Lakehouse"
+}
