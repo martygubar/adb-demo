@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+
+<head>
+
+	<title>Do More with Oracle Autonomous Database</title>
+
+	<!-- BEGIN OCOM CSS/JS -->
+	<script>
+		!function(){
+			var d=document.documentElement;d.className=d.className.replace(/no-js/,'js');
+			if(document.location.href.indexOf('betamode=') > -1) document.write('<script src="asset/web/js/ocom-betamode.js"><\/script>');
+		}();
+	</script>
+	<link data-wscss href="asset/web/css/ocom-v1-base.css" rel="stylesheet">
+	<link data-wscss href="asset/web/css/ocom-v1-styles.css" rel="preload" as="style" onload="this.rel='stylesheet'" onerror="this.rel='stylesheet'">
+
+	<noscript>
+		<link href="asset/web/css/ocom-v1-styles.css" rel="stylesheet">
+	</noscript>
+
+	<link data-wsjs data-reqjq href="asset/web/js/ocom-v1-base.js" rel="preload" as="script">
+	<link data-wsjs data-reqjq href="asset/web/js/ocom-v1-lib.js" rel="preload" as="script">
+
+	<script data-wsjs src="asset/web/js/jquery-min.js" async onload="$('head link[data-reqjq][rel=preload]').each(function(){var a=document.createElement('script');a.async=false;a.src=$(this).attr('href');this.parentNode.insertBefore(a, this);});$(function(){$('script[data-reqjq][data-src]').each(function(){this.async=true;this.src=$(this).data('src');});});"></script>
+
+	<!-- END OCOM CSS/JS -->
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta name="siteid" content="us">
+	<meta name="countryid" content="US">
+	<meta name="country" content="United States">
+	<meta name="Language" content="en">
+	<meta name="altpages" content="ae,ae-ar,ar,au,br,ca-en,ca-fr,cn,co,cz,de,es,fr,in,it,jp,kr,mx,nl,pl,ro,ru,se,tr,tw,uk">
+
+	
+
+	</head>
+	<body class="f11 f11v6">
+		<div class="f11w1">
+
+		<!-- U30v3 -->
+<style>
+	#u30{opacity:1 !important;filter:opacity(100%) !important;position:sticky;top:0}
+	.u30v3{background:#3a3632;height:50px;overflow:hidden;border-top:5px solid #3a3632;border-bottom:5px solid #3a3632}
+	#u30nav,#u30tools{visibility:hidden}
+	.u30v3 #u30logo {width:121px;height: 44px;display: inline-flex;justify-content: flex-start;}
+	#u30:not(.u30mobile) .u30-oicn-mobile,#u30.u30mobile .u30-oicn{display:none}
+	#u30logo svg{height:auto;align-self:center}
+	.u30brand{height:50px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;max-width:1344px;padding:0 48px;margin:0 auto}
+	.u30brandw1{display:flex;flex-direction:row;color:#fff;text-decoration:none;align-items:center}
+	@media (max-width:1024px){.u30brand{padding:0 24px}}
+	#u30skip2,#u30skip2content{transform:translateY(-100%);position:fixed}
+	.rtl #u30{direction:rtl}
+</style>
+
+
+<section id="u30" class="u30 u30v3 pause" data-trackas="header">
+
+	<div id="u30skip2">
+		<ul>
+			<li><a id="u30skip2c" href="#maincontent">Skip to content</a></li>
+			<li><a id="u30acc" href="https://www.oracle.com/corporate/accessibility/">Accessibility Policy</a></li>
+		</ul>
+	</div>
+
+	<div class="u30w1 cwidth" id="u30w1">
+
+		<div id="u30brand" class="u30brand">
+			<div class="u30brandw1">
+
+				<a id="u30btitle" href="https://www.oracle.com/" data-lbl="logo" aria-label="Home">
+					<div id="u30logo">
+						<svg class="u30-oicn-mobile" xmlns="http://www.w3.org/2000/svg" width="32" height="21" viewBox="0 0 32 21"><path fill="#C74634" d="M9.9,20.1c-5.5,0-9.9-4.4-9.9-9.9c0-5.5,4.4-9.9,9.9-9.9h11.6c5.5,0,9.9,4.4,9.9,9.9c0,5.5-4.4,9.9-9.9,9.9H9.9 M21.2,16.6c3.6,0,6.4-2.9,6.4-6.4c0-3.6-2.9-6.4-6.4-6.4h-11c-3.6,0-6.4,2.9-6.4,6.4s2.9,6.4,6.4,6.4H21.2"/></svg>
+						<svg class="u30-oicn" xmlns="http://www.w3.org/2000/svg"  width="231" height="30" viewBox="0 0 231 30" preserveAspectRatio="xMinYMid"><path fill="#C74634" d="M99.61,19.52h15.24l-8.05-13L92,30H85.27l18-28.17a4.29,4.29,0,0,1,7-.05L128.32,30h-6.73l-3.17-5.25H103l-3.36-5.23m69.93,5.23V0.28h-5.72V27.16a2.76,2.76,0,0,0,.85,2,2.89,2.89,0,0,0,2.08.87h26l3.39-5.25H169.54M75,20.38A10,10,0,0,0,75,.28H50V30h5.71V5.54H74.65a4.81,4.81,0,0,1,0,9.62H58.54L75.6,30h8.29L72.43,20.38H75M14.88,30H32.15a14.86,14.86,0,0,0,0-29.71H14.88a14.86,14.86,0,1,0,0,29.71m16.88-5.23H15.26a9.62,9.62,0,0,1,0-19.23h16.5a9.62,9.62,0,1,1,0,19.23M140.25,30h17.63l3.34-5.23H140.64a9.62,9.62,0,1,1,0-19.23h16.75l3.38-5.25H140.25a14.86,14.86,0,1,0,0,29.71m69.87-5.23a9.62,9.62,0,0,1-9.26-7h24.42l3.36-5.24H200.86a9.61,9.61,0,0,1,9.26-7h16.76l3.35-5.25h-20.5a14.86,14.86,0,0,0,0,29.71h17.63l3.35-5.23h-20.6" transform="translate(-0.02 0)" /></svg>
+					</div>
+				</a>
+
+			</div>
+		</div>
+
+		<div id="u30nav" class="u30nav" data-closetxt="Close Menu" data-trackas="menu">
+			<nav id="u30navw1" aria-label="Oracle website">
+				<button data-navtarget="products" aria-controls="products" aria-expanded="false" class="u30navitem">Products</button>
+				<button data-navtarget="industries" aria-controls="industries" aria-expanded="false" class="u30navitem">Industries</button>
+				<button data-navtarget="resources" aria-controls="resources" aria-expanded="false" class="u30navitem">Resources</button>
+				<button data-navtarget="partners" aria-controls="partners" aria-expanded="false" class="u30navitem">Partners</button>
+				<button data-navtarget="customers" aria-controls="customers" aria-expanded="false" class="u30navitem">Customers</button>
+				<button data-navtarget="developers" aria-controls="developers" aria-expanded="false" class="u30navitem">Developers</button>
+				<button data-navtarget="events" aria-controls="events" aria-expanded="false" class="u30navitem">Events</button>
+				<button data-navtarget="about" aria-controls="about" aria-expanded="false" class="u30navitem">About</button>
+			</nav>
+		</div>
+
+		<div id="u30tools" class="u30tools">
+
+			<div id="u30search">
+				<div id="u30searchw1">
+					<div id="u30searchw2">
+						<form name="u30searchForm" id="u30searchForm" data-contentpaths="/content/Web/Shared/Auto-Suggest Panel Event" method="get" action="/search">
+							<input type="hidden" name="Nty" value="1">
+							<input type="hidden" name="Dy" value="1">
+							<!--<input type="hidden" name="Ntk" value="SI-Global">-->
+							<input type="hidden" name="Ntk" value="SI-ALL5">
+							<input type="hidden" name="cty" value="us">
+							<input type="hidden" name="lang" value="en">
+							<input type="hidden" name="NoBstNoRec" value="no">
+							<div class="u30s1">
+								<button id="u30closesearch" aria-label="Close Search" type="button">
+									<span>Close Search</span>
+									<svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 13L2 7L8 1" stroke="#161513" stroke-width="2"/></svg>
+								</button>
+								<span class="u30input">
+
+									<div class="u30inputw1">
+										<input id="u30input" name="Ntt" value="" type="text" placeholder="Search" autocomplete="off" aria-autocomplete="both" aria-activedescendant="" aria-label="Search Oracle.com" role="combobox" aria-expanded="false" aria-owns="u30autosuggest" aria-haspopup="listbox">
+									</div>
+
+									<div id="u30searchw3">
+										<ul role="listbox" id="u30autosuggest">
+
+										</ul>
+										<div id="u30results">
+											<button id="u30closeresults" aria-label="Close Results" type="button">
+												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+													<path d="M7,7 L17,17"></path>
+													<path d="M17,7 L7,17"></path>
+												</svg>
+												<span>Close</span>
+											</button>
+											<div id="u30resultsw1">
+
+											</div>
+											<div id="u30noresults">
+												<div class="u30result noresults">
+													<div>No results found</div>
+													<p>Your search did not match any results.</p>
+													<p>We suggest you try the following to help find what you're looking for:</p>
+													<ul class="u30nr1">
+														<li>Check the spelling of your keyword search.</li>
+														<li>Use synonyms for the keyword you typed, for example, try "application" instead of "software."</li>
+														<li>Start a new search.</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+									<span class="u30submit">
+										<input class="u30searchbttn" type="submit" value="Submit Search">
+									</span>
+									<button id="u30clear" type="reset" aria-label="Clear Search">
+										<span>Clear Search</span>
+										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 7L13 13M7 13L13 7M19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10Z" stroke="#161513" stroke-width="2"/></svg>
+									</button>
+								</span>
+							</div>
+						</form>
+						<div id="u30announce" data-alerttxt="suggestions found to navigate use up and down arrows" class="u30visually-hidden" aria-live="polite"></div>
+					</div>
+				</div>
+				<button class="u30searchBtn" id="u30searchBtn" type="button" aria-label="Open Search Field" aria-expanded="false">
+					<span>Search</span>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M15,15l6,6M17,10a7,7,0,1,1-7-7A7,7,0,0,1,17,10Z"/></svg>
+				</button>
+			</div>
+
+			<div id="u30-profile" class="u30-profile">
+				<button id="u30-flyout" data-lbl="sign-in-account" aria-expanded="false">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M17,19.51A3,3,0,0,0,14,17H10a3,3,0,0,0-3,2.51m9.92,0a9,9,0,1,0-9.92,0m9.92,0a9,9,0,0,1-9.92,0M15,10a3,3,0,1,1-3-3A3,3,0,0,1,15,10Z"/></svg>
+					<span class="acttxt">View Accounts</span>
+				</button>
+				<div id="u30-profilew1">
+
+					<button id="u30actbck" aria-label="close account flyout"><span class="u30actbcktxt">Back</span></button>
+
+					<div class="u30-profilew2">
+						<span class="u30acttitle">Cloud Account</span>
+						<a href="cloud.oracle.com" class=" u30darkcta u30cloudbg" data-lbl="sign-in-to-cloud">Sign in to Cloud</a>
+						<a href="placeholder.html" class="u30lightcta" data-lbl="try-free-cloud-trial">Sign Up for Free Cloud Tier</a>
+					</div>
+
+					<span class="u30acttitle">Oracle Account</span>
+					<ul class="u30l-out">
+						<li><a href="https://www.oracle.com/webapps/redirect/signon?nexturl=" data-lbl="profile:sign-in-account" class="u30darkcta">Sign-In</a></li>
+						<li><a href="https://profile.oracle.com/myprofile/account/create-account.jspx" data-lbl="profile:create-account" class="u30lightcta">Create an Account</a></li>
+					</ul>
+					<ul class="u30l-in">
+						<li><a href="https://www.oracle.com/corporate/contact/help.html" data-lbl="help">Help</a></li>
+						<li><a href="javascript:sso_sign_out();" id="u30pfile-sout" data-lbl="signout">Sign Out</a></li>
+					</ul>
+
+				</div>
+			</div>
+
+			<div class="u30-contact">
+				<a href="https://www.oracle.com/corporate/contact/" data-lbl="contact-us" title="Contact Sales"><span>Contact Sales</span></a>
+			</div>
+
+			<a href="https://webstandards.oraclecorp.com/redwood/template-sample/redwood-menucontent-global.html" id="u30ham" role="button" aria-expanded="false" aria-haspopup="true" aria-controls="u30navw1">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+					<title>Menu</title>
+					<path d="M16,4 L2,4" class="p1"></path>
+					<path d="M2,12 L22,12" class="p2"></path>
+					<path d="M2,20 L16,20" class="p3"></path>
+					<path d="M0,12 L24,12" class="p4"></path>
+					<path d="M0,12 L24,12" class="p5"></path>
+				</svg>
+				<span>Menu</span>
+			</a>
+
+		</div>
+
+	</div>
+
+	<script>
+
+	var u30min = [722,352,0,0];
+	var u30brsz = new ResizeObserver(u30 => {
+
+		document.getElementById('u30').classList.remove('u30mobile','u30tablet','u30notitle');
+		let u30b = document.getElementById('u30brand').offsetWidth,
+			u30t = document.getElementById('u30tools').offsetWidth ;
+			u30v = document.getElementById('u30navw1');
+			u30w = document.getElementById('u30w1').offsetWidth - 48;
+		if((u30b + u30t) > u30min[0]){
+			u30min[2] = ((u30b + u30t) > 974) ? u30b + u30t + 96 : u30b + u30t + 48;
+		}else{
+			u30min[2] = u30min[0];
+		}
+
+		u30min[3] = ((u30b + 112) > u30min[1]) ? u30min[3] = u30b + 112 : u30min[3] = u30min[1];
+
+		u30v.classList.add('u30navchk');
+		u30min[2] = (u30v.lastElementChild.getBoundingClientRect().right > u30min[2]) ? Math.ceil(u30v.lastElementChild.getBoundingClientRect().right) : u30min[2];
+		u30v.classList.remove('u30navchk');
+
+		if(u30w <= u30min[3]){
+			document.getElementById('u30').classList.add('u30notitle');
+		}
+		if(u30w <= u30min[2]){
+			document.getElementById('u30').classList.add('u30mobile');
+		}
+
+	});
+
+	var u30wrsz = new ResizeObserver(u30 => {
+		let u30n = document.getElementById('u30navw1').getBoundingClientRect().height,
+		u30h = u30[0].contentRect.height;
+		let u30c = document.getElementById('u30').classList,
+			u30w = document.getElementById('u30w1').offsetWidth - 48,
+			u30m = 'u30mobile',
+			u30t = 'u30tablet';
+
+		if(u30c.contains('navexpand') && u30c.contains(u30m) && u30w > u30min[2]){
+			if(!document.querySelector('button.u30navitem.active')){
+				document.getElementById('u30ham').click();
+			}
+			u30c.remove(u30m);
+			if(document.getElementById('u30').getBoundingClientRect().height > 80){
+				u30c.add(u30t);
+			}else{
+				u30c.remove(u30t);
+			}
+		}else if(u30w <= u30min[2]){
+			if(getComputedStyle(document.getElementById('u30tools')).visibility != "hidden"){
+				u30c.add(u30m);
+				u30c.remove(u30t);
+			}
+		}else if(u30n < 30 && u30h > 80){
+			u30c.add(u30t);
+			u30c.remove(u30m);
+		}else if(u30n > 30){
+			u30c.add(u30m);
+			u30c.remove(u30t);
+		}else if(u30n < 30 && u30h <= 80){
+			u30c.remove(u30m);
+			if(document.getElementById('u30').getBoundingClientRect().height > 80){
+				u30c.add(u30t);
+			}else{
+				u30c.remove(u30t);
+			}
+		}
+	});
+	u30brsz.observe(document.getElementById('u30btitle'));
+	u30wrsz.observe(document.getElementById('u30'));
+	</script>
+
+</section>
+
+<!-- /CH11v0 --><!-- U03v5 -->
+<nav class="u03 u03v5" data-trackas="breadcrumb" data-ocomid="u03" data-a11y="true">
+	<div class="cwidth">
+		<div class="u03w1">
+
+			<ul>
+			<li><a href="https://www.oracle.com/database/">Database</a></li>
+			<li><a href="https://www.oracle.com/autonomous-database/">Autonomous Database</a></li>
+			</ul>
+		</div>
+
+	</div>
+</nav>
+
+<!-- /CT12v0 --><!-- CH13v3 -->
+<!-- Hero -->
+<section class="ch13 ch13v3 txtlight bgimg cpad" data-trackas="ch13" data-ocomid="ch13">
+	
+	<div class="ch13bg" style="background-image:url(/asset/images/ch13-bgfpo-02.jpeg);"></div>
+	
+
+	<div class="o-crsl col1" data-slideautoplay="6" data-ocomid="ocrsl">
+		<div class="crsl-slider">
+
+			<div class="col-item">
+				<div class="ch13w1 cwidth">
+					<div class="col-framework col2 col-justified col-gutters">
+						<div class="col-w1">
+							<div class="col-item">
+								<div class="col-item-w1">
+									<h2>Do more with Oracle Autonomous Database</h2>
+									<p>Oracle Autonomous Database is not just a database. It's a complete, self-service data management platform that enables 
+										you to focus on innovating and gaining insights from all your data. And, you can sleep well at night with the confidence that your data is always safe
+										and available.</p>
+								</div>
+							</div>
+							<div class="col-item">
+								<div class="col-item-w1">
+									<div class="ytembed ytvideo ytthumbnail" data-ytid="ZtK4_0ZEfTY" aria-label="Oracle Autonomous Database: Revolutionizing Data Management video"></div>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
+				<div class="col-item-w2"><p><br/></p></div>
+			</div>
+			
+			<div class="col-item">
+				<div class="ch13w1 cwidth">
+					<div class="col-framework col2 col-justified col-gutters">
+						<div class="col-w1">
+							<div class="col-item">
+								<div class="col-item-w1">
+									<h2>See how to put all your data to work</h2>
+									<p>Say goodbye to data silos and specialized engines that complicate your life. See for yourself how Oracle Autonomous Database helps you 
+										achieve the best business outcomes by simplifying your data platform. 
+									</p>
+									<div class="ch13w4">
+										<p>
+											<ul class="obullets">
+												<li>Integrate any data from anywhere</li>
+												<li>Empower innovators with integrated, self-service analytics</li>
+												<li>Develop smarter applications the way you want
+												</li>
+												<li>Take advantage of a platform that is always ready, always secure</li>
+
+											</ul>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-item">
+								<div class="col-item-w1">
+									<img class="cb123img1" src="/asset/images/you-got-this.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+
+			<div class="col-item">
+				<div class="ch13w1 cwidth">
+					<div class="col-framework col2 col-justified col-gutters">
+						<div class="col-w1">
+							<div class="col-item">
+								<div class="col-item-w1">
+									<h2>Introducing Oracle MovieStream</h2>
+									<p>Oracle MovieStream is a fictitious moviestreaming service. The company's goal is to delight its customers.
+										MovieStream is in a competitive market - customers will go to a competitor if they can’t find the right product within a few clicks. 
+										They need to ieep and grow its base. Of course, there’s a limited marketing budget and need to prioritize special offers.										
+									</p>
+									<p>See how MovieStream uses the Oracle Autonomous Database platform to achieve its goals. Learn how MovieStream:
+										<ul class="obullets">											
+											<li>Uses analytics to produce better outcomes</li>
+											<li>Provides analysts with self-service capabilities</li>
+											<li>Keeps its platform always on and always secure</li>											
+										</ul>
+									</p>
+								</div>
+							</div>
+
+							<div class="col-item">
+								<div class="col-item-w1">
+									<div class="ytembed ytvideo ytthumbnail" data-ytid="u6gJE9f7jr4" aria-label="Oracle Autonomous Database: Deliver intelligent applications"></div>
+								</div>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+</section>
+
+<!-- Begin videos-->
+<section class="cb101 cb101v0 cpad" data-trackas="cb101" data-ocomid="cb101">
+	<div class="cb101w1 cwidth">
+
+		<h2>Integrate any data from anywhere</h2>
+		<p>It's easy to integrate any data from anywhere. See how to spin up an Autonomous Database and then load or link to data from a 
+			variety of sources.
+		</p>
+
+		<div class="col-framework col4 col-gutters col-justified col-top">
+			<div class="col-w1">
+
+				<div class="col-item">
+					<div class="col-item-w1">
+						<div class="ytembed ytvideo ytthumbnail" data-ytid="oqfeaF-ztIE" aria-label="Lorem Ipsum video"></div>
+					</div>
+					<div class="col-item-w2">
+						<h4>Create a database and tour the service</h4>
+						<p>Deploy a complete, fully automated data management platform of any size that supports any type of workload.
+						</p>
+						<div class="col-item-w3 obttns">
+							
+								<a href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=928" target="blank">
+									Try it!
+								</a>
+							
+						</div>							
+					</div>
+				</div>
+
+				<div class="col-item">
+					<div class="col-item-w1">
+						<div class="ytembed ytvideo ytthumbnail" data-ytid="kfby_pH9rfE" aria-label="Integrate any data, anywhere"></div>
+					</div>
+					<div class="col-item-w2">
+						<h4>Simplified data integration</h4>
+						<p>Integrate data from many sources, including spreadsheets, databases, applications and data lakes. 							
+						</p>
+						<div class="col-item-w3 obttns">
+							
+								<a href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=928" target="blank">
+									Try it!
+								</a>
+							
+						</div>							
+					</div>
+				</div>
+
+				<div class="col-item">
+					<div class="col-item-w1">
+						<div class="ytembed ytvideo ytthumbnail" data-ytid="3WwQ7hylGmI" aria-label="Securely integrate data across clouds"></div>
+					</div>
+					<div class="col-item-w2">
+						<h4>Securely integrate data across clouds</h4>
+						<p>Load data from partners' cloud stores
+							using the native security measures of each cloud vendor.
+						</p>
+					</div>
+					<div class="col-item-w3 obttns">							
+						<a href="https://blogs.oracle.com/datawarehousing/post/using-role-amazon-resource-names-arns-to-securely-access-aws-resources-from-your-autonomous-database" target="blank">
+							Try it!
+						</a>
+					
+				</div>	
+				</div>
+
+				<div class="col-item">
+					<div class="col-item-w1">
+						<div class="ytembed ytvideo ytthumbnail" data-ytid="Z2YeL92U6hg" aria-label="Analyze the data lake with Autonomous Database and OCI Data Catalog"></div>
+					</div>
+					<div class="col-item-w2">
+						<h4>Discover and analyze data lake sources</h4>
+						<p>Discover data lake assets with OCI Data Catalog and then automatically query and analyze those sources. No additional management is required.
+						</p>
+					</div>
+					<div class="col-item-w3 obttns">							
+						<a href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=877" target="blank">
+							Try it!
+						</a>
+					
+				</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="cb101 cb101v0 cpad" data-trackas="cb101" data-ocomid="cb101">
+	<div class="cb101w1 cwidth">
+
+		<h2>Innovate with integrated, self-service analytics</h2>
+		<p>Putting your data to work has never been easier with Autonomous Database. SQL is the language of data, used by applications in every organization. 
+			Oracle Database offers the industry's most powerful SQL language, allowing you to answer more sophisticated questions without falling off a complexity cliff. 
+			And, SQL analytics is just the beginning. Use built-in machine learning, graph, spatial and text analytics that eliminate the need to introduce specialized 
+			services. This leads to better, faster and more intelligent business outcomes.
+		</p>
+
+		<div class="col-framework col4 col-gutters col-justified col-top">
+			<div class="col-w1">
+
+				<div class="col-item">
+					<div class="col-item-w1">
+						<div class="ytembed ytvideo ytthumbnail" data-ytid="8S7balv2ums" aria-label="Use SQL to gain insights from all your data with Oracle Autonomo Database"></div>
+					</div>
+					<div class="col-item-w2">
+						<h4>Analyze all data with Oracle SQL</h4>
+						<p>Use Oracle Autonomous Database's industry leading SQL engine to gain insights from all your data. Any type of data - stored anywhere.</p>
+						<div class="col-item-w3 obttns">
+							
+								<a href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=582" target="blank">
+									Try it!
+								</a>
+							
+						</div>							
+					</div>
+				</div>
+
+				<div class="col-item">
+					<div class="col-item-w1">
+						<div class="ytembed ytvideo ytthumbnail" data-ytid="QOLFOOsVxK8" aria-label="Bring Data to Life with Oracle Autonomous Database and Oracle Analytics Cloud"></div>
+					</div>
+					<div class="col-item-w2">
+						<h4>Bring your data to life with Oracle Analytics Cloud</h4>
+						<p>Use any SQL tool or application with Oracle Autonomous Database. 
+							See how to create interactive dashboards with Analytics Cloud. 
+							</p>
+						<div class="col-item-w3 obttns">							
+								<a href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=582" target="blank">
+									Try it!
+								</a>
+							
+						</div>							
+					</div>
+				</div>
+
+				<div class="col-item">
+					<div class="col-item-w1">
+						<div class="ytembed ytvideo ytthumbnail" data-ytid="yh0wTNgAE08" aria-label="Predict customer churn with machine learning"></div>
+					</div>
+					<div class="col-item-w2">
+						<h4>Predict customer churn</h4>
+						<p>Use machine learning to predict loyal customers that are at-risk of leaving MovieStream and then make them a special offer.</p>
+						</div>
+						<div class="col-item-w3 obttns">							
+							<a href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=889" target="blank">
+								Try it!
+							</a>						
+					</div>							
+			</div>
+			<div class="col-item">
+				<div class="col-item-w1">
+					<div class="ytembed ytvideo ytthumbnail" data-ytid="j12kv7UDwW4" aria-label="Make better recommendations"></div>
+				</div>
+				<div class="col-item-w2">
+					<h4>Make better recommendations with graph analytics</h4>
+					<p>Model relationships and communities using specialized graph algorithms. Make personalized recommendations based on community membership.
+						</p>
+					</div>
+					<div class="col-item-w3 obttns">							
+						<a href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=889" target="blank">
+							Try it!
+						</a>						
+				</div>							
+		</div>
+
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="cb101 cb101v0 cpad" data-trackas="cb101" data-ocomid="cb101">
+	<div class="cb101w1 cwidth">
+
+		<h2>Develop smarter applications the way you want</h2>
+		<p>Interested in low code development using Oracle APEX - the world's most popular low-code application platform? Would you prefer developing 
+			Node.js applications using REST endpoints? Or, take advantage of document stores with a MongoDB API? Autonomous Database offers options 
+			for everyone - without sacrificing security and high availability.
+		</p>
+		<p>What's more, use Autonomous Database analytics to get results. Build intelligence into your application to improve business outcomes.
+		</p>
+
+		<div class="col-framework col4 col-gutters col-justified col-top">
+			<div class="col-w1">
+
+				<div class="col-item">
+					<div class="col-item-w1">
+						<div class="ytembed ytvideo ytthumbnail" data-ytid="klm8M4e5fEM" aria-label="Build applications faster with Oracle APEX"></div>
+					</div>
+					<div class="col-item-w2">
+						<h4>Build applications faster with Oracle APEX</h4>
+						<p>Enjoy low code development. Build scalable, secure enterprise apps, with world-class features, 
+							that can be deployed anywhere.</p>
+						<div class="col-item-w3 obttns">							
+								<a href="https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=942" target="blank">
+									Try it!
+								</a>							
+						</div>							
+					</div>
+				</div>
+
+				<div class="col-item">
+					<div class="col-item-w1">
+						<div class="ytembed ytvideo ytthumbnail" data-ytid="Fjz853pGUCQ" aria-label="Develop native web applications with Autonomous Database JSON document store"></div>
+					</div>
+					<div class="col-item-w2">
+						<h4>Easily develop web applications using open APIs</h4>
+						<p>Take advantage of Autonomous Database's JSON document store's speed and simplicity. See how to take advantage of flexible REST and  
+							MongoDB API.</p>
+						<div class="col-item-w3 obttns">
+							
+								<a href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=815" target="blank">
+									Try it!
+								</a>
+							
+						</div>							
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="cb101 cb101v0 cpad" data-trackas="cb101" data-ocomid="cb101">
+	<div class="cb101w1 cwidth">
+
+		<h2>Always ready, always secure</h2>
+		<p>For decades, the world's most important data has been managed by Oracle Databases. Autonomous Database automatically implements real world best practices
+			to keep your system running at peak efficiency and security. Expect more than 99.995% availability backed by a security control center that identifies risks and alerts you of any 
+			suspicious activity.
+		</p>
+
+		<div class="col-framework col4 col-gutters col-justified col-top">
+			<div class="col-w1">
+
+				<div class="col-item">
+					<div class="col-item-w1">
+						<div class="ytembed ytvideo ytthumbnail" data-ytid="rJ0DHyGDQ_Y" aria-label="Autoscale your Autonomous Database Resources"></div>
+					</div>
+					<div class="col-item-w2">
+						<h4>Dynamically scale resources to meet workload requirements</h4>
+						<p>Improve scalability and performance with autoscale. Save money by only using those extra resources when needed.</p>
+						<div class="col-item-w3 obttns">
+							
+								<a href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=553" target="blank">
+									Try it!
+								</a>
+							
+						</div>							
+					</div>
+				</div>
+				<div class="col-item">
+					<div class="col-item-w1">
+						<div class="ytembed ytvideo ytthumbnail" data-ytid="PorLH8KD0v4" aria-label="Enable disaster recovery"></div>
+					</div>
+					<div class="col-item-w2">
+						<h4>Enable disaster recovery</h4>
+						<p>See how easy it is to protect your data from unforeseen disasters using Autonomous Data Guard. </p>
+						<div class="col-item-w3 obttns">
+							
+								<a href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=553" target="blank">
+									Try it!
+								</a>
+							
+						</div>							
+					</div>
+				</div>
+				<div class="col-item">
+					<div class="col-item-w1">
+						<div class="ytembed ytvideo ytthumbnail" data-ytid="UUc26bpdFnc" aria-label="Introduction to Data Safe"></div>
+					</div>
+					<div class="col-item-w2">
+						<h4>Introduction to Oracle Data Safe</h4>
+						<p>Secure enterprise data with Security Assessment, Data Discovery, Data Masking, User Assessment, 
+							Activity Auditing, and Alerts.</p>
+						<div class="col-item-w3 obttns">
+							
+								<a href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=598" target="blank">
+									Try it!
+								</a>
+							
+						</div>							
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</section>
+
+</div>
+</body>
+</html>
