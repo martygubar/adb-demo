@@ -1,0 +1,60 @@
+			<section class="cb101 cb101v0 cpad" data-trackas="cb101" data-ocomid="cb101">
+				<div class="cb101w1 cwidth">
+					<br><br>
+					<h2>Always ready, always secure</h2>
+					<p>For decades, the world's most important data has been managed by Oracle Databases. Autonomous Database automatically implements real-world best practices
+						to keep your system running at peak efficiency and security. Expect more than 99.995% availability backed by a security control center that identifies risks and alerts you of any
+						suspicious activity.
+					</p>
+					<div class="col-framework col4 col-gutters col-justified col-top">
+						<div class="col-w1">
+							<div class="col-item">
+								<div class="col-item-w1">
+									<div class="ytembed ytvideo ytthumbnail add-shadow1" data-ytid="uAzS5U3fAXo" aria-label="Auto scale your Autonomous Database Resources"></div>
+								</div>
+								<div class="col-item-w2">
+									<h4>Dynamically scale resources to meet workload requirements</h4>
+									<p>Improve scalability and performance with auto scale. Save money by only using those extra resources when needed. (2:26)
+									</p>
+									<div class="col-item-w3 obttns">
+										<a href="https://oracle-livelabs.github.io/adb/shared/workshops/freetier-indepth/index.html?lab=adb-auto-scaling" target="blank">
+											Try it!
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-item">
+								<div class="col-item-w1">
+									<div class="ytembed ytvideo ytthumbnail add-shadow1" data-ytid="GsCC4FN1NTQ" aria-label="Enable disaster recovery"></div>
+								</div>
+								<div class="col-item-w2">
+									<h4>Enable disaster recovery</h4>
+									<p>See how easy it is to protect your data from unforeseen disasters using Autonomous Data Guard. (2:04)
+									</p>
+									<div class="col-item-w3 obttns">
+										<a href="https://oracle-livelabs.github.io/adb/shared/workshops/freetier-indepth/index.html?lab=adb-autonomous-data-guard" target="blank">
+											Try it!
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-item">
+								<div class="col-item-w1">
+									<div class="ytembed ytvideo ytthumbnail add-shadow1" data-ytid="iGBDrPTOnpw" aria-label="Introduction to Data Safe"></div>
+								</div>
+								<div class="col-item-w2">
+									<h4>Protect sensitive data</h4>
+									<p>Secure enterprise data with Oracle Data Safe's Security Assessment, Data Discovery, Data Masking, User Assessment,
+										Activity Auditing, and Alerts. (7:23)
+									</p>
+									<div class="col-item-w3 obttns">
+										<a href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=598" target="blank">
+											Try it!
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>

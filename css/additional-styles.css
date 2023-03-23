@@ -1,0 +1,29 @@
+		<style>.add-shadow1 {
+		    -webkit-box-shadow: 10px 10px 37px 0px rgba(0, 0, 0, 0.75);
+		    -moz-box-shadow: 10px 10px 37px 0px rgba(0, 0, 0, 0.75);
+		    box-shadow: 10px 10px 37px 0px rgba(0, 0, 0, 0.75);
+		    border-radius: 10px;
+		    -webkit-animation: scaledown 1s linear;
+		    -moz-animation: scaledown 1s linear;
+		    animation: scaledown 1s linear;
+		    transform-origin: 50% 50%;
+		    animation-fill-mode: forwards;
+		}
+		}
+
+		.add-shadow2 {
+		    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		    border-radius: 10px;
+		}
+
+		.add-shadow1:hover {
+		    z-index: 100;
+		    -webkit-animation: scale 1s linear;
+		    -moz-animation: scale 1s linear;
+		    animation: scale 1s linear;
+		    transform-origin: 50% 50%;
+		    animation-fill-mode: forwards;
+		    transform: scale(1.15);
+		}
+
+		</style>

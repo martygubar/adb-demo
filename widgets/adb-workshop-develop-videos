@@ -1,0 +1,48 @@
+			<section class="cb101 cb101v0 cpad" data-trackas="cb101" data-ocomid="cb101">
+				<div class="cb101w1 cwidth">
+					<br><br>
+					<h2>Develop smarter applications the way you want</h2>
+					<p>Interested in low code development using Oracle APEX - the world's most popular low-code application platform? Would you prefer developing
+						Node.js applications using REST endpoints? Or, take advantage of document stores with a MongoDB API? Autonomous Database offers options
+						for everyone - without sacrificing security and high availability.
+					</p>
+					<p>What's more, use Autonomous Database analytics to get results. Build intelligence into your application to improve business outcomes.
+					</p>
+					<div class="col-framework col4 col-gutters col-justified col-top">
+						<div class="col-w1">
+							<div class="col-item">
+								<div class="col-item-w1">
+									<div class="ytembed ytvideo ytthumbnail add-shadow1" data-ytid="klm8M4e5fEM" aria-label="Build applications faster with Oracle APEX"></div>
+								</div>
+								<div class="col-item-w2">
+									<h4>Build applications faster with Oracle APEX</h4>
+									<p>Enjoy low code development. Build scalable, secure enterprise apps, with world-class features,
+										that can be deployed anywhere. (1:41)
+									</p>
+									<div class="col-item-w3 obttns">
+										<a href="https://apexapps.oracle.com/pls/apex/dbpm/r/livelabs/view-workshop?wid=942" target="blank">
+											Try it!
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-item">
+								<div class="col-item-w1">
+									<div class="ytembed ytvideo ytthumbnail add-shadow1" data-ytid="HNrcXJ0bafU" aria-label="Develop native web applications with Autonomous Database JSON document store"></div>
+								</div>
+								<div class="col-item-w2">
+									<h4>Easily develop web applications using open APIs</h4>
+									<p>Take advantage of Autonomous Database's JSON document store's speed and simplicity. See how to take advantage of flexible REST and
+										MongoDB API. (3:38)
+									</p>
+									<div class="col-item-w3 obttns">
+										<a href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=815" target="blank">
+											Try it!
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>

@@ -1,0 +1,76 @@
+			<section class="cb101 cb101v0 cpad" data-trackas="cb101" data-ocomid="cb101">
+				<div class="cb101w1 cwidth">
+					<br><br><br>
+					<h2>Innovate with integrated, self-service analytics</h2>
+					<p>Putting your data to work has never been easier with Autonomous Database. SQL is the language of data, used by applications in every organization.
+						Oracle Database offers the industry's most powerful SQL language, allowing you to answer more sophisticated questions without falling off a complexity cliff.
+						And, SQL analytics is just the beginning. Use built-in machine learning, graph, spatial and text analytics that eliminate the need to introduce specialized
+						services. This leads to better, faster and more intelligent business outcomes.
+					</p>
+					<div class="col-framework col4 col-gutters col-justified col-top">
+						<div class="col-w1">
+							<div class="col-item">
+								<div class="col-item-w1">
+									<div class="ytembed ytvideo ytthumbnail add-shadow1" data-ytid="ZsOk_uccbmA" aria-label="Use SQL to gain insights from all your data with Oracle Autonomo Database"></div>
+								</div>
+								<div class="col-item-w2">
+									<h4>Analyze all data with Oracle SQL</h4>
+									<p>Use Oracle Autonomous Database's industry leading SQL engine to gain insights from all your data. Any type of data - stored anywhere. (3:05)
+									</p>
+									<div class="col-item-w3 obttns">
+										<a href="https://oracle-livelabs.github.io/adb/movie-stream-story-lite/workshops/freetier/index.html?lab=analyzing-movie-sales-data" target="blank">
+											Try it!
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-item">
+								<div class="col-item-w1">
+									<div class="ytembed ytvideo ytthumbnail add-shadow1" data-ytid="RKcRX0su7IY" aria-label="Bring Data to Life with Oracle Autonomous Database and Oracle Analytics Cloud"></div>
+								</div>
+								<div class="col-item-w2">
+									<h4>Bring your data to life with Oracle Analytics Cloud</h4>
+									<p>Use any SQL tool or application with Oracle Autonomous Database.
+										See how to create interactive dashboards and gain insights with Analytics Cloud. (3:13)
+									</p>
+									<div class="col-item-w3 obttns">
+										<a href="https://apexapps.oracle.com/pls/apex/r/dbpm/livelabs/view-workshop?wid=684" target="blank">
+											Try it!
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-item">
+								<div class="col-item-w1">
+									<div class="ytembed ytvideo ytthumbnail add-shadow1" data-ytid="dFzxP5wXr6M" aria-label="Predict customer churn with machine learning"></div>
+								</div>
+								<div class="col-item-w2">
+									<h4>Predict customer churn</h4>
+									<p>Use machine learning to predict loyal customers that are at-risk of leaving MovieStream and then make them a special offer. (3:28)
+									</p>
+								</div>
+								<div class="col-item-w3 obttns">
+									<a href="https://oracle-livelabs.github.io/adb/movie-stream-story-lite/workshops/ocw-freetier/index.html?lab=predict-churn" target="blank">
+										Try it!
+									</a>
+								</div>
+							</div>
+							<div class="col-item">
+								<div class="col-item-w1">
+									<div class="ytembed ytvideo ytthumbnail add-shadow1" data-ytid="ecHRy05v6D4" aria-label="Make better recommendations"></div>
+								</div>
+								<div class="col-item-w2">
+									<h4>Make better recommendations with graph analytics</h4>
+									<p>Model relationships and communities using specialized graph algorithms. Make personalized recommendations based on community membership. (2:16)
+									</p>
+								</div>
+								<div class="col-item-w3 obttns">
+									<a href="https://oracle-livelabs.github.io/adb/movie-stream-story-lite/workshops/ocw-freetier/index.html?lab=apply-graph" target="blank">
+										Try it!
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
