@@ -52,8 +52,7 @@ MovieStream is partnering with pizza chains around the country in order to deliv
 
     -- Query the marketing bucket!
     -- (or your bucket ;) )
-    SELECT * 
-    FROM DBMS_CLOUD.LIST_OBJECTS('ADB_AMAZON_ARN', 'https://marketing-moviestream.s3.amazonaws.com/');
+   f
 
     </copy>
     ```
